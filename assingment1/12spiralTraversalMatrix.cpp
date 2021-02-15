@@ -3,8 +3,25 @@ using namespace std;
 
 void spiralTraverse(vector<vector<int>> matrix)
 {
-    for (int i = 0; i < matrix.size(); i++)
+    int rs = 0, re = matrix.size() - 1, cs = 0, ce = matrix[0].size() - 1;
+
+    while (rs < re && cs < ce)
     {
+        for (int j = cs; j <= ce; j++)
+            cout << matrix[rs][j];
+        rs++;
+
+        for (int i = rs; i <= re; i++)
+            cout << matrix[i][ce];
+        ce--;
+
+        for (int j = ce; j >= cs; j++)
+            cout << matrix[re][j];
+        re--;
+
+        for (int i = re; i >= rs; i++)
+            cout << matrix[i][cs];
+        cs++;
     }
 }
 
