@@ -1,1 +1,0 @@
-this is a test for checking if the gituhub setup is correct or not.
