@@ -22,23 +22,25 @@ void findIdxLargestContigousSum(vector<int> vec)
         {
             curr_sum = vec[i];
             start_idx = i;
+            end_idx = i;
         }
         else
         {
             curr_sum = vec[i] + curr_sum;
         }
-        max_sum = max(curr_sum, max_sum);
+        if (curr_sum > max_sum)
+        {
+            max_sum = curr_sum;
+            end_idx = i;
+        }
     }
-    cout << start_idx << " ";
-    int curr_sum = start_idx;
-    while (curr_sum < max_sum)
-    {
-        curr_sum += vec[end_idx];
-        end_idx += 1;
-    }
+
+    cout << start_idx << " " << end_idx << " " << endl;
 }
 
 int main()
 {
+    vector<int> vec = {-2, -3, 4, -1, -2, 1, 5, -3};
+    findIdxLargestContigousSum(vec);
     return 0;
 }
