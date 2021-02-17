@@ -38,10 +38,10 @@ vector<int> nearestSmallestToLeft(vector<int> vec)
 vector<int> nearestSmallestToRight(vector<int> vec)
 {
     vector<int> res(vec.size());
-    res[0] = -1;
+    res[vec.size() - 1] = -1;
     stack<int> S;
-    S.push(0);
-    for (int i = 1; i < vec.size(); i++)
+    S.push(vec.size() - 1);
+    for (int i = vec.size() - 2; i >= 0; i--)
     {
         if (vec[S.top()] < vec[i])
         {
