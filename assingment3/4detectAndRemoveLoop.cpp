@@ -30,7 +30,7 @@ bool detectLoop(Node *head)
     return false;
 }
 
-Node *detectAndRemoveLoop(Node *head)
+void *detectAndRemoveLoop(Node *head)
 {
     if (head == NULL || head->next == NULL)
     {
@@ -38,7 +38,7 @@ Node *detectAndRemoveLoop(Node *head)
     }
     Node *slow = head, *fast = head;
     bool loopPresent = false;
-    while (slow != NULL && fast != NULL and fast->next != NULl)
+    while (slow != NULL && fast != NULL and fast->next != NULL)
     {
         slow = slow->next;
         fast = fast->next->next;
