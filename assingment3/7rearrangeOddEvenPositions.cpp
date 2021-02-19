@@ -54,11 +54,11 @@ int main()
 {
     Node *ll = new Node(1);
     ll->next = new Node(2);
-    ll->next->next = new Node(2);
-    ll->next->next->next = new Node(4);
+    ll->next->next = new Node(12);
+    ll->next->next->next = new Node(14);
     ll->next->next->next->next = new Node(15);
-    ll->next->next->next->next->next = new Node(15);
-    ll->next->next->next->next->next->next = new Node(15);
+    ll->next->next->next->next->next = new Node(51);
+    ll->next->next->next->next->next->next = new Node(45);
     ll->next->next->next->next->next->next->next = new Node(61);
 
     printList(ll);
