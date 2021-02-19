@@ -18,7 +18,6 @@ public:
 
 void preorder(Node *root)
 {
-    cout << root->data << endl;
     if (root == NULL)
         return;
     stack<Node *> S;
