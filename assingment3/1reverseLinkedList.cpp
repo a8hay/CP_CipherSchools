@@ -99,8 +99,8 @@ Node *reverseListRecursive(Node *head)
     if (head == NULL || head->next == NULL)
         return head;
     Node *next = reverseListRecursive(head->next);
-    next->next = head;
-    head->next = NULL;
+    head->next->next = head;
+    next->next = NULL;
     return head;
 }
 
