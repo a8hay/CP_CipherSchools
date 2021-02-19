@@ -31,18 +31,24 @@ void printList(Node *head)
 
 Node *removeDuplicate(Node *head)
 {
-    Node *dummy = new Node(-1);
-    Node *dummy_tail = dummy, *curr = head;
-    while (curr != NULL)
+    if (head == NULL || head->next == NULL)
+        return head;
+    Node *curr = head;
+    Node *nxt = NULL;
+    while (curr->next != NULL)
     {
-        if (curr->data != dummy_tail->data)
+        if (curr->data == curr->next->data)
         {
-            dummy_tail->next = curr;
-            dummy_tail = dummy_tail->next;
+            nxt = curr->next;
+            curr->next = nxt->next;
+            delete nxt;
         }
-        curr = curr->next;
+        else
+        {
+            curr = curr->next;
+        }
     }
-    return dummy->next;
+    return head;
 }
 
 int main()
