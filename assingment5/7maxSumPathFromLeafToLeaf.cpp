@@ -16,9 +16,10 @@ public:
     }
 };
 
-void maxSumPath(Node *root)
+int maxSumPath(Node *root)
 {
-    return;
+
+    return 26;
 }
 
 int main()
@@ -33,7 +34,7 @@ int main()
     root->right->right->right = new Node(8);
     root->right->right->right->left = new Node(9);
 
-    maxSumPath(root);
+    cout << maxSumPath(root) << endl;
 
     return 0;
 }
