@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void medianOfRunningStream(vector<double> &vec)
+{
+	priority_queue<double> maxHeap;
+	priority_queue<double, vector<double>, greater<double>> minHeap;
+	maxHeap.push(vec[0])
+	double top, top1, top2;
+	for (int i=1; i<vec.size(); i++)
+	{
+		maxHeap.push(vec[i]);
+		while (maxHeap.size() - minHeap.size() > 1)
+		{
+			top = maxHeap.top(); maxHeap.pop();
+			minHeap.push(top);
+		}
+		if (maxHeap.size() > minHeap.size())
+		{
+			cout << maxHeap.top() << " ";
+		}
+		else if (maxHeap.size() == minHeap.size())
+		{
+			top1 = maxHeap.top();
+			top2 = minHeap.top();
+			cout << (top1+top2)/2 << " ";
+		}
+		else
+		{
+			// this condition will never come
+		}
+	}
+}
+
+int main()
+{
+	return 0;
+}
